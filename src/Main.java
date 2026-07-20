@@ -19,6 +19,13 @@ public class Main {
         System.out.println(timesTwo.apply(number));
 
         //consumer: van bemenet, nincs kimenet
-        //Consumer<Integer> evenOrOdd =
+        Consumer<Integer> evenOrOdd = num -> {
+            if (num % 2 == 0) {
+                System.out.println("Even");
+            } else {
+                System.out.println("Odd");
+            }
+        };
+        evenOrOdd.accept(number);
     }
 }
