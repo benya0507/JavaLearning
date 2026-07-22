@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -6,6 +9,30 @@ import java.util.function.Supplier;
 public class Main {
     public static void main(String[] args) {
 
+        List<String> names = new ArrayList<>();
+        names.add("John");
+        names.add("Sara");
+        names.add("Jack");
+        names.add("James");
+        names.add("Bence");
+
+        System.out.println("List of names: ");
+        for (String name : names) {
+            System.out.println(name);
+        }
+        System.out.println("number of names: " + names.size());
+
+        names.removeIf(name -> name.contains("e"));
+
+        System.out.println("List of names without the letter e: ");
+        for (String name : names) {
+            System.out.println(name);
+        }
+        System.out.println("number of names without the letter e: " + names.size());
+
+
+
+        /*
         Animal animal = new Animal();
         Animal dog = new Dog();
 
@@ -29,7 +56,6 @@ public class Main {
         System.out.println(container1.getValue());
         System.out.println(container2.getValue());
 
-        /*
         int number = 3;
 
 
