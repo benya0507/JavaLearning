@@ -6,6 +6,12 @@ import java.util.function.Supplier;
 public class Main {
     public static void main(String[] args) {
 
+        Animal animal = new Animal();
+        Animal dog = new Dog();
+
+        animal.makeSound();
+        dog.makeSound();
+
 
         Box<Integer> box = new Box<>(5);
         System.out.println("The value is: " + box.<String>transform(x-> x.toString()));
