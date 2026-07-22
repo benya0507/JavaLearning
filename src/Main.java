@@ -6,6 +6,12 @@ import java.util.function.Supplier;
 public class Main {
     public static void main(String[] args) {
 
+
+        Box<Integer> box = new Box<>(5);
+        System.out.println("The value is: " + box.<String>transform(x-> x.toString()));
+        System.out.println(box.<Integer>transform(x -> x * 2));
+
+
         Pair<String, Integer> pair1 = new Pair<>("Bence", 21);
         System.out.println(pair1.getFirst());
         System.out.println(pair1.getSecond());

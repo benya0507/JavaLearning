@@ -1,3 +1,4 @@
+import java.util.function.Function;
 public class Box<T> {
     T content;
     public Box(T content) {
@@ -7,7 +8,7 @@ public class Box<T> {
         return content;
     }
 
-    /*public T transform(Function<T, R>)  {
-        return content;
-    }*/
+    public <R> R transform(Function<T, R> function)  {
+        return function.apply(content);
+    }
 }
