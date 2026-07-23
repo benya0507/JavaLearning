@@ -41,6 +41,23 @@ public class Main {
             System.out.print(number + ", ");
         }
 
+        System.out.println();
+
+        List<Integer> result = numbers.stream()
+                .filter(x -> x % 2 == 0)
+                .map(x -> x * 2)
+                .toList();
+
+        int sumChained = result.stream()
+                .mapToInt(x -> x)
+                .sum();
+
+        for (Integer number : result) {
+            System.out.print(number + ", ");
+        }
+        System.out.println();
+        System.out.println(sumChained);
+
 
 
 
