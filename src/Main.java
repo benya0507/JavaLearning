@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -9,12 +7,47 @@ import java.util.function.Supplier;
 public class Main {
     public static void main(String[] args) {
 
+        List<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("b");
+        list.add("c");
+
+        Set<String> set = new HashSet<>(list);
+
+        Map<String,Integer> map = new HashMap<>();
+        map.put("Player1",10);
+        map.put("Player2",22);
+        map.put("Player3",100);
+        map.put("Player4",0);
+
+        for(String l : list){
+            System.out.println(l);
+        }
+
+        System.out.println();
+
+        for(String s: set){
+            System.out.println(s);
+        }
+
+        System.out.println();
+
+        for (Map.Entry<String,Integer> entry : map.entrySet()){
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
+
+        /*
         List<String> names = new ArrayList<>();
         names.add("John");
         names.add("Sara");
         names.add("Jack");
         names.add("James");
         names.add("Bence");
+
+
+
 
         System.out.println("List of names: ");
         for (String name : names) {
@@ -32,7 +65,7 @@ public class Main {
 
 
 
-        /*
+
         Animal animal = new Animal();
         Animal dog = new Dog();
 
