@@ -7,6 +7,44 @@ import java.util.function.Supplier;
 public class Main {
     public static void main(String[] args) {
 
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            numbers.add(i);
+        }
+
+        List<Integer> evens = numbers.stream()
+                .filter(x-> x % 2 == 0)
+                .toList();
+
+        List<Integer> doubled = evens.stream()
+                .map(x -> x * 2)
+                .toList();
+
+        int sum = doubled.stream()
+                .mapToInt(x -> x)
+                .sum();
+
+        System.out.println(sum);
+        for (Integer number : numbers) {
+            System.out.print(number + ", ");
+        }
+
+        System.out.println();
+
+        for (Integer number : evens) {
+            System.out.print(number + ", ");
+        }
+
+        System.out.println();
+
+        for (Integer number : doubled) {
+            System.out.print(number + ", ");
+        }
+
+
+
+
+        /*
         List<String> list = new ArrayList<>();
         list.add("a");
         list.add("b");
@@ -38,7 +76,7 @@ public class Main {
         }
 
 
-        /*
+
         List<String> names = new ArrayList<>();
         names.add("John");
         names.add("Sara");
